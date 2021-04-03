@@ -50,7 +50,7 @@ const ColorFlipper = () => {
       </CardContent>
 
       <CardActions className={classes.actions}>
-        <Button variant="contained" onClick={changeBackground} size="medium">
+        <Button style={{outline: 'none'}}variant="contained" onClick={changeBackground} size="medium">
           Change Color
         </Button>
       </CardActions>
