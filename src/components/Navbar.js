@@ -23,6 +23,7 @@ const Navbar = () => {
       >
         <Tab label="ColorFlipper" component={Link} to="/colorflipper" />
         <Tab label="Counter" component={Link} to="/counter" />
+        <Tab label="Reviews" component={Link} to="/reviews" />
       </Tabs>
     </Paper>
   );
