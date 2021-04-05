@@ -36,9 +36,27 @@ const useStyles = makeStyles({
 
 const Reviews = () => {
   const [index, setIndex] = useState(0);
-//   const { name, job, img, text } = reviews[index];
+  const { name, job, img, text } = reviews[index];
 
   const classes = useStyles();
+
+  const getForward = () => {
+    if (index < reviews.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
+  };
+
+  const getBackward = () => {
+    if (index <= reviews.length - 1) {
+      setIndex(index - 1);
+    } else if (index < 0) {
+      setIndex(reviews.length - 1);
+    }
+  };
+
+  // need to figure out the getBackward function
 
   return (
     <div>
@@ -47,25 +65,18 @@ const Reviews = () => {
       </div>
       <div>
         <Card className={classes.root}>
-          <Avatar
-            alt="Remy Sharp"
-            src={reviews[index]}
-            className={classes.large}
-          />
+          <Avatar alt={name} src={img} className={classes.large} />
           <CardContent>
-            <Typography className={classes.title}>Peter Hemsing</Typography>
-            <Typography className={classes.text}>Web Development</Typography>
-            <Typography className={classes.text}>
-              jbwfhj urefv jehrfv uahervf jahvr ugvr ufjyagr uceuryv jahvcjghavs
-              fcgj
-            </Typography>
+            <Typography className={classes.title}>{name}</Typography>
+            <Typography className={classes.text}>{job}</Typography>
+            <Typography className={classes.text}>{text}</Typography>
           </CardContent>
           <CardActions className={classes.actions}>
             <Button size="small">
-              <ArrowBackIosIcon />
+              <ArrowBackIosIcon onClick={getBackward} />
             </Button>
             <Button size="small">
-              <ArrowForwardIosIcon />
+              <ArrowForwardIosIcon onClick={getForward} />
             </Button>
           </CardActions>
         </Card>
