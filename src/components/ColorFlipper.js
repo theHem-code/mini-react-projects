@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     minWidth: 275,
     marginTop: 50,
     padding: 100,
-    justifyContent: "center",
+    textAlign: '-webkit-center',
   },
   bar: {
     justifyContent: "center",

@@ -14,8 +14,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: 100,
     marginTop: 100,
-    justifyContent: "center",
-    textAlign: "center",
+    textAlign: '-webkit-center',
   },
   title: {
     fontSize: 18,
@@ -49,9 +48,9 @@ const Reviews = () => {
   };
 
   const getBackward = () => {
-    if (index <= reviews.length - 1) {
+    if (index <= reviews.length - 1 && index > 0) {
       setIndex(index - 1);
-    } else if (index < 0) {
+    } else {
       setIndex(reviews.length - 1);
     }
   };
