@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { FaRegPlusSquare } from "react-icons/fa";
 import { FaRegMinusSquare } from "react-icons/fa";
+import "../Questions.css";
 
 const useStyles = makeStyles({
   root: {
@@ -15,11 +16,11 @@ const useStyles = makeStyles({
     fontWeight: "bold",
   },
   question: {
-    background: '#fff',
-    borderRadius: '0.5rem',
-    boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
-    padding: '1.5rem 1.5rem 0 1.5rem',
-    marginBottom: '2rem',
+    background: "#fff",
+    borderRadius: "0.5rem",
+    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+    padding: "1.5rem 1.5rem 0 1.5rem",
+    marginBottom: "2rem",
   },
   questionTitle: {
     display: "flex",
@@ -29,39 +30,52 @@ const useStyles = makeStyles({
     paddingBottom: 10,
   },
   questionText: {
-    padding: '1rem 0 1.5rem 0',
-    borderTop: '1px solid rgba(0, 0, 0, 0.2)',
+    padding: "1rem 0 1.5rem 0",
+    borderTop: "1px solid rgba(0, 0, 0, 0.2)",
   },
   questionBtn: {
     fontSize: 20,
     background: "transparent",
     borderColor: "transparent",
   },
+  hideText: {
+    display: "none",
+  },
 });
 
 const Questions = () => {
   const classes = useStyles();
+
+  const [isActive, setActive] = useState("false");
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <div>
       {/* header */}
       <h3 className={classes.root}>Genral Questions</h3>
 
-      {/* Questions */}
-      <article className={classes.question}>
-        <div className={classes.questionTitle}>
+      {/* Single Questions */}
+      <article className="question">
+        {/* Question title */}
+        <div className="question-title">
           <p>This is my first question</p>
-          {/* Question title */}
-          <div className={classes.questionBtn}>
+          <button
+            type="button"
+            className={`question-btn ${isActive ? "" : "show-text"}`}
+            onClick={handleToggle}
+          >
             <span>
-              <FaRegPlusSquare />
+              <FaRegPlusSquare className="plus-icon" />
             </span>
             <span>
-              <FaRegMinusSquare />
+              <FaRegMinusSquare className="minus-icon" />
             </span>
-          </div>
+          </button>
         </div>
-        <div className={classes.questionText}>
+        <div className={isActive ? "question-text" : "show-text"}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
             quisquam dolore! Pariatur obcaecati quibusdam doloremque expedita.
