@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 const Navbar = () => {
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,6 +24,8 @@ const Navbar = () => {
         <Tab label="ColorFlipper" component={Link} to="/colorflipper" />
         <Tab label="Counter" component={Link} to="/counter" />
         <Tab label="Reviews" component={Link} to="/reviews" />
+        <Tab label="Questions" component={Link} to="/questions" />
+        
       </Tabs>
     </Paper>
   );

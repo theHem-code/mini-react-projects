@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ColorFlipper from "./components/ColorFlipper";
 import Counter from "./components/Counter";
 import Reviews from "./components/Reviews";
+import Questions from "./components/Questions";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route exact path="/colorflipper" component={ColorFlipper} />
             <Route exact path="/counter" component={Counter} />
             <Route exact path="/reviews" component={Reviews} />
+            <Route exact path="/questions" component={Questions} />
           </Switch>
         </div>
       </Router>

@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 
 const Reviews = () => {
   const [index, setIndex] = useState(0);
-  const { name, job, img, text } = reviews[index];
+  const { name, job, img, text } = reviews[index]; // destructure the object
 
   const classes = useStyles();
 
@@ -47,7 +47,7 @@ const Reviews = () => {
     }
   };
 
-  const getBackward = () => {
+  const getBack = () => {
     if (index <= reviews.length - 1 && index > 0) {
       setIndex(index - 1);
     } else {
@@ -72,7 +72,7 @@ const Reviews = () => {
           </CardContent>
           <CardActions className={classes.actions}>
             <Button size="small">
-              <ArrowBackIosIcon onClick={getBackward} />
+              <ArrowBackIosIcon onClick={getBack} />
             </Button>
             <Button size="small">
               <ArrowForwardIosIcon onClick={getForward} />
