@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FaRegPlusSquare } from "react-icons/fa";
 import { FaRegMinusSquare } from "react-icons/fa";
 import "../Questions.css";
+import questions from "../data/questions";
 
 const useStyles = makeStyles({
   root: {
@@ -46,11 +47,15 @@ const useStyles = makeStyles({
 const Questions = () => {
   const classes = useStyles();
 
+  const [index, setIndex] = useState(0);
   const [isActive, setActive] = useState("false");
+
+  const { title, text } = questions[index];
 
   const handleToggle = () => {
     setActive(!isActive);
   };
+
 
   return (
     <div>
@@ -61,7 +66,7 @@ const Questions = () => {
       <article className="question">
         {/* Question title */}
         <div className="question-title">
-          <p>This is my first question</p>
+          <p>{title}</p>
           <button
             type="button"
             className={`question-btn ${isActive ? "" : "show-text"}`}
@@ -77,11 +82,7 @@ const Questions = () => {
         </div>
         <div className={isActive ? "question-text" : "show-text"}>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            quisquam dolore! Pariatur obcaecati quibusdam doloremque expedita.
-            Amet quasi veritatis neque provident molestias, aliquam vel saepe
-            cupiditate voluptas nihil dignissimos ipsum hic dolorum
-            necessitatibus et! Repellat ut sapiente blanditiis excepturi totam.
+            {text}
           </p>
         </div>
       </article>

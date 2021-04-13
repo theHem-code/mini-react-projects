@@ -25,6 +25,7 @@ const Navbar = () => {
         <Tab label="Counter" component={Link} to="/counter" />
         <Tab label="Reviews" component={Link} to="/reviews" />
         <Tab label="Questions" component={Link} to="/questions" />
+        <Tab label="Menu" component={Link} to="/menu" />
         
       </Tabs>
     </Paper>

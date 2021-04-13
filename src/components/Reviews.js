@@ -55,7 +55,6 @@ const Reviews = () => {
     }
   };
 
-  // need to figure out the getBackward function
 
   return (
     <div>
